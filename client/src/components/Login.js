@@ -78,8 +78,15 @@ const Login = () => {
             style={{ padding: "10px" }}
           />
         </div>
-        <Button type="submit" variant="contained">
+        <Button
+          type="submit"
+          variant="contained"
+          style={{ marginRight: "20px" }}
+        >
           Log In
+        </Button>
+        <Button type="submit" variant="contained" onClick={() => navigate("/")}>
+          Sign Up
         </Button>
       </form>
     </main>

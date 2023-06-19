@@ -90,8 +90,19 @@ const Register = () => {
             style={{ padding: "10px" }}
           />
         </div>
-        <Button type="submit" variant="contained">
+        <Button
+          type="submit"
+          variant="contained"
+          style={{ marginRight: "20px" }}
+        >
           Sign Up
+        </Button>
+        <Button
+          type="submit"
+          variant="contained"
+          onClick={() => navigate("/login")}
+        >
+          Log In
         </Button>
       </form>
     </main>
