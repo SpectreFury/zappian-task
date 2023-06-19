@@ -18,6 +18,11 @@ const Dashboard = () => {
   const [toggleUsersModal, setToggleUsersModal] = useState(false);
   const navigate = useNavigate();
 
+  const logOut = () => {
+    localStorage.removeItem("token");
+    navigate("/login");
+  };
+
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
@@ -49,6 +54,7 @@ const Dashboard = () => {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
+        position: "relative",
       }}
     >
       <EditModal toggleOpen={toggleOpen} setToggleOpen={setToggleOpen} />
@@ -58,6 +64,13 @@ const Dashboard = () => {
         setRowData={setRowData}
       />
       <h1>Zappian Task</h1>
+      <Button
+        variant="contained"
+        style={{ position: "absolute", top: "10px", right: "10px" }}
+        onClick={logOut}
+      >
+        Log Out
+      </Button>
       <div
         className="ag-theme-alpine"
         style={{ width: "800px", height: "400px" }}
